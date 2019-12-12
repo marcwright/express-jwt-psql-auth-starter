@@ -63,8 +63,8 @@ router.post('/login', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  console.log(req.headers)
-  var decoded = jwt.decode(req.headers.authorization, config.jwtSecret);
+  console.log(req.headers.authorization)
+  let decoded = jwt.decode(req.headers.authorization.split(' ')[1], config.jwtSecret)
   console.log(decoded);
   User.findByPk(decoded.id)
     .then(user => {
