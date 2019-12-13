@@ -4,13 +4,20 @@
 1. In the root of your project, create a `.env` file:
 
     ```
-    touch .env
+    touch .env .gitignore
     ```
 
 1. In `.env`, add a secret key variable to create your token. **Do not put quotes around it**:
 
     ```
     JWTSECRET=dieselisthebest123!
+    ```
+
+1. In `.gitignore`, add the following:
+
+    ```
+    .env
+    node_modules
     ```
 
 1. The database specifics are located in `config/config.json`. Create a postgres development database from the command line:
